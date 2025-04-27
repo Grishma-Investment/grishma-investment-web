@@ -38,6 +38,8 @@ const Home = () => {
     const [subscribeMessageType, setSubscribeMessageType] = useState<'success' | 'error' | null>(null);
     const [isSubscribing, setIsSubscribing] = useState<boolean>(false);
 
+    let SERVER_IP =import.meta.env.VITE_SERVER_IP;
+
     const truncateTitle = (title: string, maxLength: number = 200) => {
         if (title.length > maxLength) {
             return title.slice(0, maxLength) + '...';
@@ -60,9 +62,9 @@ const Home = () => {
 
     const fetchAllData = async () => {
         try {
-            const trendingRes = await fetch('http://192.168.1.68:5000/trending');
-            const latestRes = await fetch('http://192.168.1.68:5000/latest');
-            const allArticlesRes = await fetch('http://192.168.1.68:5000/articles');
+            const trendingRes = await fetch(`${SERVER_IP}/trending`);
+            const latestRes = await fetch(`${SERVER_IP}/latest`);
+            const allArticlesRes = await fetch(`${SERVER_IP}/articles`);
 
             const trendingData = await trendingRes.json();
             const latestData = await latestRes.json();
@@ -108,7 +110,7 @@ const Home = () => {
 
         setIsSubscribing(true);
         try {
-            const response = await fetch('http://192.168.1.68:5000/subscribe', {
+            const response = await fetch(`${SERVER_IP}/subscribe`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email: emailInput }),

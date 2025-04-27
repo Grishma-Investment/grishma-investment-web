@@ -36,13 +36,14 @@ const Search = () => {
   const queryParams = new URLSearchParams(location.search);
   const rawQuery = queryParams.get('q') || '';
   const query = rawQuery.toLowerCase();
+  let SERVER_IP =import.meta.env.VITE_SERVER_IP;
 
   const [articles, setArticles] = useState<Article[]>([]);
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch('http://192.168.1.68:5000/articles'); // example API
+      const response = await fetch(`${SERVER_IP}/articles`); // example API
       const data = await response.json();
       setArticles(data);
     };

@@ -5,11 +5,12 @@ import '../styles/Category.css';
 const Articles: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   const [articles, setArticles] = useState<any[]>([]);
+  let SERVER_IP =import.meta.env.VITE_SERVER_IP;
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('http://192.168.1.68:5000/articles');
+        const response = await fetch(`${SERVER_IP}/articles`);
         if (!response.ok) {
           throw new Error('Failed to fetch articles');
         }
