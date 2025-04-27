@@ -133,7 +133,7 @@ const Article = () => {
                 </div>
                 <div className="item-info">
                   <div className="item-badge">{item.category}</div>
-                  <div className="item-title">{truncateTitle(item.title, 70)}</div>
+                  <div className="item-title">{truncateTitle(item.title, 50)}</div>
                   <div className="item-date">
                     <i className="fa-solid fa-calendar-days"></i> {formatDate(item.createdAt)}
                   </div>
