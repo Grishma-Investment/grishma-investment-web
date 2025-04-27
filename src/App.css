@@ -1,0 +1,11 @@
+.app-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  margin-top: 70px;
+  display: flex;
+}

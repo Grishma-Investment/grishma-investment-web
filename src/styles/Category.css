@@ -1,0 +1,107 @@
+.category-wrapper{
+    width: 100%;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.category-wrapper .header{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    text-transform: uppercase;
+}
+
+.category-wrapper  .list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.category-wrapper .list a{
+    color: black;
+    text-decoration: none;
+}
+
+.category-wrapper .list .item {
+    width: 340px;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    height: 400px;
+}
+
+.category-wrapper .list .item:hover img {
+    transform: scale(1.2);
+}
+
+.category-wrapper .list .item .item-img {
+    min-height: 250px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    overflow: hidden;
+}
+
+.category-wrapper .list .item .item-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.category-wrapper .list .item .item-info {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.category-wrapper .list .item .item-info .item-badge {
+    height: auto;
+    border: 0.1px solid rgb(48, 48, 48);
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.category-wrapper .list .item .item-info .item-title {
+    font-weight: bold;
+}
+
+.category-wrapper .list .item .item-info .item-desc {
+    font-size: 15px;
+    color: black;
+}
+
+.category-wrapper .list .item .item-info .item-date {
+    font-size: 15px;
+    color: black;
+}
+
+.category-wrapper .list .item .item-info .item-date i {
+    margin-right: 8px;
+}
+
+@media screen and (max-width: 450px ) {
+    .category-wrapper{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .category-wrapper .list .item{
+        width: 100%;
+    }
+}

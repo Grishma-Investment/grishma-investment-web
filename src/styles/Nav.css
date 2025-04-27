@@ -1,0 +1,214 @@
+.nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+
+.nav-wrapper .first-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-wrapper .second-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-wrapper .second-row .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 0.1px solid #1d1d1d;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.nav-wrapper .second-row .links a {
+    color: white;
+    text-decoration: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    background-color: #1d1d1d;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-wrapper .second-row .links a:hover {
+    text-decoration: underline;
+}
+
+.nav-wrapper .first-row .logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-wrapper .first-row .logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-wrapper .first-row .links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-wrapper .first-row .links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+
+}
+
+.nav-wrapper .first-row .links a:hover {
+    text-decoration: underline;
+}
+
+.nav-wrapper .first-row .hamburger {
+    display: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-wrapper .first-row .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-wrapper .first-row .search input {
+    background-color: transparent;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 0.1px solid white;
+    padding: 8px;
+    width: 270px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-wrapper .first-row .search input:focus {
+    outline: none;
+}
+
+.nav-wrapper .first-row .search input::placeholder {
+    color: white;
+}
+
+.nav-wrapper .first-row .search i {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: 0.1px solid white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.nav-wrapper .second-row .search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-wrapper .second-row .search input {
+    background-color: transparent;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 0.1px solid white;
+    padding: 8px;
+    width: 100%;
+    height: 45px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav-wrapper .second-row .search input:focus {
+    outline: none;
+}
+
+.nav-wrapper .second-row .search input::placeholder {
+    color: white;
+}
+
+.nav-wrapper .second-row .search i {
+    background-color: white;
+    color: black;
+    padding: 14px;
+    border: 0.1px solid white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+@media screen and (min-width: 1165px) {
+    .nav-wrapper .second-row {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1165px) {
+    .nav-wrapper {
+        padding: 20px;
+    }
+
+    .nav-wrapper .first-row .hamburger {
+        display: block;
+    }
+
+    .nav-wrapper .first-row .links {
+        display: none;
+    }
+
+    .nav-wrapper .first-row .search {
+        display: none;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: 100%;
+    left: 0;
+    width: 290px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: black !important;
+}
