@@ -416,6 +416,7 @@
     flex-wrap: wrap;
     gap: 30px;
     width: 100%;
+    justify-content: space-between;
 }
 
 .home-wrapper .row-3 .list .item {
