@@ -40,6 +40,7 @@
 
 .category-wrapper .list .item:hover img {
     transform: scale(1.2);
+    filter: brightness(0.5);
 }
 
 .category-wrapper .list .item .item-img {
