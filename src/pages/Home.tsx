@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
 import Forex from '../components/Forex';
-import Stock from '../components/Stock';
-import Weather from '../components/Crypto';
+import Crypto from '../components/Crypto';
 import GoldSilver from '../components/GoldSilver';
 
 import StockIndicesCatImg from '../assets/images/category/stock-and-indices.png';
@@ -15,6 +14,7 @@ import OpinionsImpactCatImg from '../assets/images/category/opinions-and-impact.
 
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import Nepse from '../components/Nepse';
 
 type Article = {
     _id: number;
@@ -176,14 +176,14 @@ const Home = () => {
                                 <i className="fas fa-dollar-sign"></i> Forex
                             </div>
                             <div
-                                className={`title ${activeSection === 'Stock' ? 'active' : ''}`}
-                                onClick={() => handleTitleClick('Stock')}
+                                className={`title ${activeSection === 'Nepse' ? 'active' : ''}`}
+                                onClick={() => handleTitleClick('Nepse')}
                             >
-                                <i className="fas fa-chart-line"></i> {isMobile ? 'Stock' : 'Stock Market'}
+                                <i className="fas fa-chart-line"></i> NEPSE
                             </div>
                             <div
-                                className={`title ${activeSection === 'Weather' ? 'active' : ''}`}
-                                onClick={() => handleTitleClick('Weather')}
+                                className={`title ${activeSection === 'Crypto' ? 'active' : ''}`}
+                                onClick={() => handleTitleClick('Crypto')}
                             >
                                 <i className="fab fa-bitcoin"></i> Crypto
                             </div>
@@ -198,8 +198,8 @@ const Home = () => {
 
                         <div className="content">
                             {activeSection === 'Forex' && <Forex />}
-                            {activeSection === 'Stock' && <Stock />}
-                            {activeSection === 'Weather' && <Weather />}
+                            {activeSection === 'Nepse' && <Nepse />}
+                            {activeSection === 'Crypto' && <Crypto />}
                             {activeSection === 'GoldSilver' && <GoldSilver />}
                         </div>
                     </div>

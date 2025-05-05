@@ -5,6 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server:{
-    allowedHosts: ['grishmainvest.com', 'www.grishmainvest.com']
+    allowedHosts: ['grishmainvest.com', 'www.grishmainvest.com'],
+    proxy: {
+      '/fenegosida': {
+        target: 'https://www.fenegosida.org',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/fenegosida/, ''),
+      },
+    },
   }
 })

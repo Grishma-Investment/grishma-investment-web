@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import GILogo from '../assets/images/author/gi.png';
 import '../styles/Article.css';
 
@@ -15,6 +15,9 @@ const Article = () => {
   const [category, setCategory] = useState();
   const SERVER_IP = import.meta.env.VITE_SERVER_IP;
   const CLIENT_IP = import.meta.env.VITE_CLIENT_IP;
+  let [redirect, setRedirect] = useState(false);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -30,6 +33,7 @@ const Article = () => {
         }
       } catch (error) {
         setError('Failed to load article');
+        navigate("/error");
       } finally {
         setLoading(false);
       }

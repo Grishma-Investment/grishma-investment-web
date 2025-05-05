@@ -1,4 +1,4 @@
-.forex-wrapper{
+.widget-wrapper{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 
-.forex-wrapper .item{
+.widget-wrapper .item{
     border: 0.1px solid #e4e5ed;
     width: 250px;
     display: flex;
@@ -18,17 +18,17 @@
     cursor: pointer;
 }
 
-.forex-wrapper .item .head{
+.widget-wrapper .item .head{
     font-weight: 600;
 }
 
-.forex-wrapper .item .rate{
+.widget-wrapper .item .rate{
     font-weight: bold;
     font-size: 30px;
 }
 
 @media screen and (max-width: 580px) {
-    .forex-wrapper .item{
+    .widget-wrapper .item{
         width: 100%;
     }
 }

@@ -14,7 +14,6 @@
     gap: 20px;
     padding: 50px;
     justify-content: center;
-    align-items: center;
 }
 
 .home-wrapper .row-1 .col-1 .second-row .top .title{
@@ -37,7 +36,7 @@
 .home-wrapper .row-1 .col-1 {
     width: 950px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-direction: column;
 }
 
@@ -167,7 +166,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 10px;
 }
 
 .home-wrapper .row-1 .col-2 .inner-row-1 {
