@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="row-1">
         <div className="col-1">
           <div className="header">Grishma Investment</div>
-          <div className="desc">Delivering the latest and most important articles and news from around the world — from breaking headlines to in-depth analysis.</div>
+          <div className="desc">Delivering the latest and most valuable financial insights, market trends, and investment strategies — from timely updates to in-depth analysis tailored for investors in Nepal.</div>
         </div>
         <div className="col-2">
           <div className="header">Categories</div>

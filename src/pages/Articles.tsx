@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/Category.css';
 
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 const Articles: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   const [articles, setArticles] = useState<any[]>([]);
-  let SERVER_IP =import.meta.env.VITE_SERVER_IP;
+  const [loading, setLoading] = useState(true);
+  let SERVER_IP = import.meta.env.VITE_SERVER_IP;
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -32,6 +36,7 @@ const Articles: React.FC = () => {
         });
 
         setArticles(filteredArticles);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching articles:', error);
       }
@@ -73,30 +78,62 @@ const Articles: React.FC = () => {
 
   return (
     <div className='category-wrapper'>
-      <div className="header">
+      <h1 className="header">
         {category ? formatCategory(category) : 'Articles'}
-      </div>
+      </h1>
       <div className="list">
-        {articles.length > 0 ? articles.map((item) => (
-          <a href={`/article/${item._id}`} key={item._id} className="item-link">
-            <div className="item">
-              <div className="item-img">
-                <img src={item.thumbnailUrl} alt={item.title} />
+        {
+          loading ?
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "space-between" }}>
+              <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                <Skeleton height={200} width={"100%"} />
+                <Skeleton height={25} width={90} borderRadius={20} />
+                <Skeleton height={20} width={"100%"} />
+                <Skeleton height={15} width={60} />
               </div>
-              <div className="item-info">
-                <div className="item-badge">{item.category}</div>
-                <div className="item-title">{truncateTitle(item.title, 50)}</div>
-                <div className="item-date">
-                  <i className="fa-solid fa-calendar-days"></i> {formatDate(item.createdAt)}
-                </div>
+              <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                <Skeleton height={200} width={"100%"} />
+                <Skeleton height={25} width={90} borderRadius={20} />
+                <Skeleton height={20} width={"100%"} />
+                <Skeleton height={15} width={60} />
+              </div>
+              <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                <Skeleton height={200} width={"100%"} />
+                <Skeleton height={25} width={90} borderRadius={20} />
+                <Skeleton height={20} width={"100%"} />
+                <Skeleton height={15} width={60} />
+              </div>
+              <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                <Skeleton height={200} width={"100%"} />
+                <Skeleton height={25} width={90} borderRadius={20} />
+                <Skeleton height={20} width={"100%"} />
+                <Skeleton height={15} width={60} />
               </div>
             </div>
-          </a>
-        )) : (
-          <div className="loading">
-            :No articles related to <strong>"{category ? formatCategory(category) : ''}"</strong> found.
-          </div>
-        )}
+            :
+            <>
+              {articles.length > 0 ? articles.map((item) => (
+                <a href={`/article/${item._id}`} key={item._id} className="item-link">
+                  <div className="item">
+                    <div className="item-img">
+                      <img src={item.thumbnailUrl} alt={item.title} />
+                    </div>
+                    <div className="item-info">
+                      <div className="item-badge">{item.category}</div>
+                      <div className="item-title">{truncateTitle(item.title, 50)}</div>
+                      <div className="item-date">
+                        <i className="fa-solid fa-calendar-days"></i> {formatDate(item.createdAt)}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              )) : (
+                <div className="loading">
+                  :No articles related to <strong>"{category ? formatCategory(category) : ''}"</strong> found.
+                </div>
+              )}
+            </>
+        }
       </div>
     </div>
   );

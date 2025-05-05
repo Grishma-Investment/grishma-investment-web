@@ -13,6 +13,9 @@ import TradeBusinessCatImg from '../assets/images/category/trade-and-business.jp
 import ComplianceRegulationsCatImg from '../assets/images/category/compliance-and-regulations.jpg';
 import OpinionsImpactCatImg from '../assets/images/category/opinions-and-impact.jpg';
 
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 type Article = {
     _id: number;
     title: string;
@@ -38,7 +41,7 @@ const Home = () => {
     const [subscribeMessageType, setSubscribeMessageType] = useState<'success' | 'error' | null>(null);
     const [isSubscribing, setIsSubscribing] = useState<boolean>(false);
 
-    let SERVER_IP =import.meta.env.VITE_SERVER_IP;
+    let SERVER_IP = import.meta.env.VITE_SERVER_IP;
 
     const truncateTitle = (title: string, maxLength: number = 200) => {
         if (title.length > maxLength) {
@@ -155,7 +158,11 @@ const Home = () => {
                                 </div>
                             </a>
                         ) : (
-                            <div>Loading...</div>
+                            <div className='hero-skeleton-wrapper'>
+                                <Skeleton width={150} height={30} borderRadius={20} />
+                                <Skeleton width={"100%"} height={30} />
+                                <Skeleton width={90} height={20} />
+                            </div>
                         )}
                     </div>
 
@@ -218,7 +225,31 @@ const Home = () => {
                                         </div>
                                     </div>
                                 </a>
-                            )) : <div>Loading...</div>}
+                            )) :
+                                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                                    <div style={{ display: "flex", gap: "10px", width: "100%" }}>
+                                        <Skeleton height={65} width={85} />
+                                        <div style={{ width: "100%" }}>
+                                            <Skeleton height={20} width={"100%"} />
+                                            <Skeleton width={60} height={10} />
+                                        </div>
+                                    </div>
+                                    <div style={{ display: "flex", gap: "10px", width: "100%" }}>
+                                        <Skeleton height={65} width={85} />
+                                        <div style={{ width: "100%" }}>
+                                            <Skeleton height={20} width={"100%"} />
+                                            <Skeleton width={60} height={10} />
+                                        </div>
+                                    </div>
+                                    <div style={{ display: "flex", gap: "10px", width: "100%" }}>
+                                        <Skeleton height={65} width={85} />
+                                        <div style={{ width: "100%" }}>
+                                            <Skeleton height={20} width={"100%"} />
+                                            <Skeleton width={60} height={10} />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
 
@@ -266,7 +297,34 @@ const Home = () => {
                                 </div>
                             </div>
                         </a>
-                    )) : <div>Loading...</div>}
+                    )) :
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "space-between", width: "100%" }}>
+                            <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                                <Skeleton height={200} width={"100%"} />
+                                <Skeleton height={25} width={90} borderRadius={20} />
+                                <Skeleton height={20} width={"100%"} />
+                                <Skeleton height={15} width={60} />
+                            </div>
+                            <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                                <Skeleton height={200} width={"100%"} />
+                                <Skeleton height={25} width={90} borderRadius={20} />
+                                <Skeleton height={20} width={"100%"} />
+                                <Skeleton height={15} width={60} />
+                            </div>
+                            <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                                <Skeleton height={200} width={"100%"} />
+                                <Skeleton height={25} width={90} borderRadius={20} />
+                                <Skeleton height={20} width={"100%"} />
+                                <Skeleton height={15} width={60} />
+                            </div>
+                            <div style={{ width: "330px", display: "flex", flexDirection: "column", gap: "5px", border: "0.1px solid #e4e5ed", padding: "15px", borderRadius: "8px" }}>
+                                <Skeleton height={200} width={"100%"} />
+                                <Skeleton height={25} width={90} borderRadius={20} />
+                                <Skeleton height={20} width={"100%"} />
+                                <Skeleton height={15} width={60} />
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
 

@@ -49,52 +49,6 @@ const Nav = () => {
           )}
         </div>
 
-        <div className="links">
-          <div 
-            className="dropdown" 
-            onMouseEnter={() => setShowMarketsDropdown(true)}
-            onMouseLeave={() => setShowMarketsDropdown(false)}
-          >
-            <a href="#">Markets <i className="fas fa-caret-down"></i></a>
-            {showMarketsDropdown && (
-              <div className="dropdown-menu">
-                <a href="/articles/stock-and-indices" onClick={handleLinkClick}>Stock & Indices</a>
-                <a href="/articles/trade-and-business" onClick={handleLinkClick}>Trade & Business</a>
-              </div>
-            )}
-          </div>
-
-          <div 
-            className="dropdown" 
-            onMouseEnter={() => setShowBusinessDropdown(true)}
-            onMouseLeave={() => setShowBusinessDropdown(false)}
-          >
-            <a href="#">Business <i className="fas fa-caret-down"></i></a>
-            {showBusinessDropdown && (
-              <div className="dropdown-menu">
-                <a href="/articles/management-and-skills" onClick={handleLinkClick}>Management & Skills</a>
-                <a href="/articles/innovation-and-technology" onClick={handleLinkClick}>Innovation & Technology</a>
-              </div>
-            )}
-          </div>
-
-          <div 
-            className="dropdown" 
-            onMouseEnter={() => setShowResearchDropdown(true)}
-            onMouseLeave={() => setShowResearchDropdown(false)}
-          >
-            <a href="#">Research <i className="fas fa-caret-down"></i></a>
-            {showResearchDropdown && (
-              <div className="dropdown-menu">
-                <a href="/articles/research-and-analysis" onClick={handleLinkClick}>Research & Analysis</a>
-                <a href="/articles/compliance-and-regulations" onClick={handleLinkClick}>Compliance & Regulations</a>
-              </div>
-            )}
-          </div>
-
-          <a href="/articles/opinions-and-impact" onClick={handleLinkClick}>Opinions & Impact</a>
-        </div>
-
         <div className="search">
           <input
             type="text"
@@ -107,6 +61,31 @@ const Nav = () => {
             <i className='fa-solid fa-magnifying-glass'></i>
           </div>
         </div>
+      </div>
+
+      <div className='links-sec'>
+        <a href="/articles/stock-and-indices" onClick={handleLinkClick}>
+          Stock & Indices
+        </a>
+        <a href="/articles/trade-and-business" onClick={handleLinkClick}>
+          Trade & Business
+        </a>
+        <a href="/articles/management-and-skills" onClick={handleLinkClick}>
+          Management & Skills
+        </a>
+        <a href="/articles/innovation-and-technology" onClick={handleLinkClick}>
+          Innovation & Technology
+        </a>
+        <a href="/articles/research-and-analysis" onClick={handleLinkClick}>
+          Research & Analysis
+        </a>
+        <a href="/articles/compliance-and-regulations" onClick={handleLinkClick}>
+          Compliance & Regulations
+        </a>
+        <a href="/articles/opinions-and-impact" onClick={handleLinkClick}>
+          Opinions & Impact
+        </a>
+
       </div>
 
       {showMobileMenu && (

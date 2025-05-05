@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import GILogo from '../assets/images/author/gi.png';
 import '../styles/Article.css';
 
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 const Article = () => {
   const { id } = useParams();
   const [article, setArticle] = useState<any>(null);
@@ -71,8 +74,48 @@ const Article = () => {
     });
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return (
+    <div className='skeleton-wrapper'>
+      <Skeleton height={50} width={"100%"} />
+      <div style={{display: "flex", width: "100%", flexDirection:"row", flexWrap: "wrap", gap: "25px", alignItems: "center"}}>
+        <div style={{display: "flex", alignItems: "center", gap:"10px"}}>
+        <Skeleton height={50} width={50} circle={true}  />
+        <Skeleton height={25} width={170} />
+        </div>
+        <Skeleton height={25} width={110} />
+        <Skeleton height={25} width={80} />
+      </div>
+      <Skeleton height={500} width={"100%"} />
+      <div>
+        {/* Paragraph 1 */}
+        <Skeleton height={25} width="100%" />
+        <Skeleton height={25} width="100%" />
+        <Skeleton height={25} width="80%" />
+        <br />
+
+        {/* Paragraph 2 */}
+        <Skeleton height={25} width="90%" />
+        <Skeleton height={25} width="70%" />
+        <Skeleton height={25} width="95%" />
+        <br />
+
+        {/* Paragraph 3 */}
+        <Skeleton height={25} width="98%" />
+        <Skeleton height={25} width="85%" />
+        <Skeleton height={25} width="65%" />
+        <br />
+
+        {/* Paragraph 4 */}
+        <Skeleton height={25} width="88%" />
+        <Skeleton height={25} width="75%" />
+        <Skeleton height={25} width="82%" />
+      </div>
+
+    </div>
+  );
+  if (error) return (
+  <div style={{padding: "50px"}}>{"Error: " + error}</div>
+);
 
   return (
     <div className="article-wrapper">
