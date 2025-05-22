@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the main source code for the Grishma Investment web application.
+This repository contains the main source code for the Grishma Investment Webpage.
 
 ## Getting Started
 
