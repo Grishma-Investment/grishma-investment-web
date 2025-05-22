@@ -1,36 +1,47 @@
-{{Project Name}}
-Overview
-{{Brief description of what the project does, its purpose, and why it exists.}}
+# Grishma Investment Web
 
-Features
-{{Feature 1 description}}
-{{Feature 2 description}}
-{{Feature 3 description}}
-{{Add more features as needed}}
-Getting Started
-Platforms
-Requirements
-{{Requirement 1 (e.g., language version, tools, dependencies)}}
-{{Requirement 2}}
-{{Additional requirements}}
-Installation
-Clone the repository:
+## Overview
 
-git clone https://github.com/grishma-investment/grishma-investment-web.git
-cd grishma-investment-web
-Build or set up the project:
+This repository contains the main source code for the Grishma Investment web application.
 
-{{build or setup commands here}}
-Install the project (if applicable):
+## Getting Started
 
-{{installation commands here}}
-Note: {{Notes about install location or directories}}
 
-Configuration
-{{How to configure the project if applicable}}
-{{Environment variables or config files}}
-Usage
-{{Demostration of project usage}}
-{{...}}
-Contributing
+### Requirements
+
+- Node.js (version 16 or higher recommended)
+
+### Installation
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/grishma-investment/grishma-investment-web.git
+    cd grishma-investment-web
+    ```
+
+2. **Install the dependencies:**
+    ```sh
+    npm install
+    ```
+
+3. **Run the project:**
+    ```sh
+    npm run dev
+    ```
+
+## Configuration
+
+- Create a `.env` file in the root directory to configure environment variables.
+- Copy the example file `.env.example` (if available) or define your own variables such as:
+
+```env
+VITE_SERVER_IP= 'https://api.grishmainvestment.com'
+```
+
+- Make sure to add .env to your .gitignore to keep sensitive information secure.
+- Adjust other configuration files if needed, depending on your project setup.
+
+
+## Contributing
+
 Contributions are welcome! Please fork the repo, make changes, and submit pull requests. Open issues for bugs or feature requests.
